@@ -1,0 +1,161 @@
+<table class="table table-bordered" id="document_table">
+            <thead>
+                <tr>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Program/Degree</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Requested Documents</th>
+                    <th>Status</th>
+                    <th>Date Requested</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php 
+                    $query = mysqli_query($db, "SELECT * FROM customer_request 
+                    JOIN gender ON customer_request.gender_id = gender.gender_id 
+                    JOIN program_degree ON customer_request.program_degree_id = program_degree.program_degree_id 
+                    JOIN req_status ON customer_request.req_status_id = req_status.req_status_id");
+                    while($row = mysqli_fetch_assoc($query)){
+                        $customer_id = $row['customer_id'];
+                        $fname = $row['firstname'];
+                        $lname = $row['lastname'];
+                        $gender = $row['gender'];
+                        $birthdate = $row['birthdate'];
+                        $degree = $row['program_degree'];
+                        $status_id = $row['req_status_id'];
+                        $status = $row['status'];
+                        $birthplace = $row['birthplace'];
+                        $name_change = $row['change_of_name'];
+                        $new_name = $row['new_name'];
+                        $id_number = $row['id_number'];
+                        $date_graduated = $row['date_graduated'];
+                        $email = $row['email'];
+                        $cell_no = $row['phone_number'];
+                        $claimer = $row['claimer'];
+                        $requested_docs = $row['requested_documents'];
+                        $owner_signature = $row['customer_esignature'];
+                        $rep_name = $row['representative_name'];
+                        $rep_signature = $row['representative_esignature'];
+                        $date_requested = $row['date_requested'];
+                ?>
+                <tr>
+                    <td><?php echo $fname; ?></td>
+                    <td><?php echo $lname; ?></td>
+                    <td><?php echo $degree; ?></td>
+                    <td><?php echo $email; ?></td>
+                    <td><?php echo $cell_no; ?></td>
+                    <td><?php echo $requested_docs ?></td>
+                    <td><?php echo $status; ?></td>
+                    <td><?php echo $date_requested; ?></td>
+                    <td>
+                        <div class="actions d-flex justify-content-evenly">
+                            <!--<a class="edit" href="request_details.php?customer_id= <?php //echo $customer_id; ?>"><i class="fa-solid fa-pen-to-square"></i></a>-->
+                            <button class="openButton" onclick="openForm()" data-modal="modalOne"><i class="fa-solid fa-pen-to-square"></i></button>
+                        </div>
+                        <div class="documentFormContainer">
+                            <div class="formPopup" id="popupForm">
+                                <p>Customer's Request Details</p>
+                                <form method="POST" class="formContainer" enctype="multipart/form-data">
+                                        <div>
+                                        <label for="customer_id">Request ID</label>
+                                        <input type="text" name="customer_id" value="<?php echo $row['customer_id'] ?>" readonly>
+                                        </div>
+                                        <div>
+                                        <label for="fname">Firstname</label>
+                                        <input type="text" name="fname" value="<?php echo $fname ?>" readonly>
+                                        </div>
+                                        <div>
+                                        <label for="lname">Lastname</label>
+                                        <input type="text" name="lname" value="<?php echo $lname ?>" readonly>
+                                        </div>
+                                        <div>
+                                        <label for="gender">Gender</label>
+                                        <input type="text" name="gender" value="<?php echo $gender ?>" readonly>
+                                        </div>
+                                        <div>
+                                        <label for="birthdate">Birthdate</label>
+                                        <input type="text" name="birthdate" value="<?php echo $birthdate ?>" readonly>
+                                        </div>
+                                        <div>
+                                        <label for="degree">Program/Degree</label>
+                                        <input type="text" name="degree" value="<?php echo $degree ?>" readonly>
+                                        </div>
+                                        <div>
+                                        <label for="birthplace">Birth Place</label>
+                                        <input type="text" name="birthplace" value="<?php echo $birthplace ?>" readonly>
+                                        </div>
+                                        <div>
+                                        <label for="name_change">Did He/She Changed Him/Her Name?</label>
+                                        <input type="text" name="name_change" value="<?php echo $name_change ?>" readonly>
+                                        </div>
+                                        <div>
+                                        <label for="new_name">New Name</label>
+                                        <input type="text" name="new_name" value="<?php echo $new_name ?>" readonly>
+                                        </div>
+                                        <div>
+                                        <label for="id_no">ID Number</label>
+                                        <input type="text" name="id_no" value="<?php echo $id_number ?>" readonly>
+                                        </div>
+                                        <div>
+                                        <label for="date_graduated">Date Graduated</label>
+                                        <input type="text" name="date_graduated" value="<?php echo $date_graduated ?>" readonly>
+                                        </div>
+                                        <div>
+                                        <label for="cell_no">Phone Number</label>
+                                        <input type="text" name="cell_no" value="<?php echo $cell_no ?>" readonly>
+                                        </div>
+                                        <div>
+                                        <label for="email">Email</label>
+                                        <input type="text" name="email" value="<?php echo $email ?>" readonly>
+                                        </div>
+                                        <div>
+                                        <label for="claimer">Claimer</label>
+                                        <input type="text" name="email" value="<?php echo $claimer ?>" readonly>
+                                        </div>
+                                        <div>
+                                        <label for="rep_name">Representative Name</label>
+                                        <input type="text" name="rep_name" id="" placeholder="Representative Name">
+                                        </div>
+                                        <div>
+                                        <label for="requested_doc">Requested Documents</label>
+                                        <input type="text" name="requested_doc" value="<?php echo $requested_docs ?>" readonly>
+                                        </div>
+                                        <div>
+                                            <label for="file">Owner's Signature</label>
+                                            <input type="file" name="owner_signature" id="file" accept=".png">
+                                        </div>
+                                        <div>
+                                            <label for="file">Representative's Signature</label>
+                                            <input type="file" name="rep_signature" id="file" accept=".png">
+                                        </div>
+                                        <div>
+                                        <label for="status">Status</label>
+                                        <select name="status" id="status">
+                                        <?php
+                                        // Connect to the database and fetch the status options
+                                        $result2 = mysqli_query($db, "SELECT * FROM req_status");
+                                        // Loop through the options and create <option> elements
+                                        while ($row2 = mysqli_fetch_assoc($result2)) {
+                                            $selected = ($row2['req_status_id'] == $status_id) ? "selected" : "";
+                                            echo "<option value='" . $row2['req_status_id'] . "' $selected>" . $row2['status'] . "</option>";
+                                        }
+                                        ?>
+                                        </select>
+                                        </div>
+                                        <div>
+                                        <label for="date">Date Requested</label>
+                                        <input type="text" id="date_requested" name="date_requested" value="<?php echo $date_requested ?>" readonly>
+                                        </div>
+                                    <button type="submit" class="btn-add" name="submit">Update</button>
+                                    <button type="button" class="btn-cancel" onclick="closeForm()">Close</button>
+                                </form>
+                            </div>
+    </div>
+                    </td>
+                </tr>
+                <?php } ?>
+            </tbody>
+        </table>
