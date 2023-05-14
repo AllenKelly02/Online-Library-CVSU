@@ -57,4 +57,11 @@ class ProfileController extends Controller
 
         return Redirect::to('/');
     }
+
+    public function index() {
+
+        $profile = Auth::user()->profile()->first();
+
+        return view('profile.index', compact(['profile']));
+    }
 }
