@@ -12,7 +12,7 @@
             </div>
             <div class="w-full flex flex-col space-y-5 h-[30rem] capitalize text-black">
                 <div class="flex flex-row-reverse">
-                   <a href="{{route('profile.edit')}}"> <button class="btn btn-ghost">Edit</button></a>
+                   <a href="{{route('user.profile.edit')}}"> <button class="btn btn-ghost">Edit</button></a>
                 </div>
                 <div class="flex space-x-5 p-5">
                     <h1 class="font-semibold"><span class="text-gray-600 font-normal">Student Number :

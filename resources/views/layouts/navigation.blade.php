@@ -42,9 +42,13 @@
                         </x-slot>
 
                         <x-slot name="content">
-                            <x-dropdown-link :href="route('profile.index')">
-                                {{ __('Profile') }}
-                            </x-dropdown-link>
+
+                            @if (Auth::user()->hasRole('user'))
+                                <x-dropdown-link :href="route('user.profile.index')">
+                                    {{ __('Profile') }}
+                                </x-dropdown-link>
+                            @endif
+
 
                             @if (Auth::user()->hasRole('admin'))
                                 <x-dropdown-link :href="route('admin.dashboard')">
@@ -109,7 +113,7 @@
 
             @if (Auth::user() != null)
                 <div class="mt-3 space-y-1">
-                    <x-responsive-nav-link :href="route('profile.edit')">
+                    <x-responsive-nav-link :href="route('user.profile.index')">
                         {{ __('Profile') }}
                     </x-responsive-nav-link>
 
