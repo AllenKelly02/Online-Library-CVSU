@@ -37,8 +37,10 @@ class BookController extends Controller
 
         $book = Book::create([
             'name' => $request->name,
+            'course' => $request->course,
+            'category' => $request->category,
             'description' => $request->description,
-            'published_year' => $request->published_year
+            'published_date' => $request->published_date
         ]);
 
         if ($request->file('image')) {
@@ -58,6 +60,7 @@ class BookController extends Controller
         }
 
         return back()->with(['message' => 'Book Added Successfully']);
+
     }
 
     /**
@@ -109,8 +112,10 @@ class BookController extends Controller
 
         $book->update([
             'name' => $request->name != null ?  $request->name : $book->name,
+            'course' => $request->course != null ?  $request->course : $book->course,
+            'category' => $request->category != null ?  $request->category : $book->category,
             'description' => $request->description != null ?  $request->description : $book->description,
-            'published_year' => $request->published_year != null ? $request->published_year : $book->published_year
+            'published_date' => $request->published_date != null ? $request->published_date : $book->published_date
         ]);
 
         return back()->with(['message' => 'Data Update Success']);

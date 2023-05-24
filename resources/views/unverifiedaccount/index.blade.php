@@ -44,22 +44,22 @@
                                             <div class="flex space-x-4 items-center">
                                                 <form method="POST" action="account/accept/{{$account->id}}">
                                                     @csrf
-                                                    <button type="submit" class="py-2 px-4 rounded bg-blue-500 text-white text-sm">Accept</button>
+                                                    <button type="submit" >Accept</button>
                                                 </form>
-                        
+
                                                 <form method="GET" action="account/reject/{{$account->id}}">
                                                     @csrf
                                                     <button type="submit" class="py-2 px-4 rounded bg-red-500 text-white text-sm">Reject</button>
                                                 </form>
                                             </div>
                                         </td>
-                                        
-                                    </tr>  
+
+                                    </tr>
                                     @endforeach
                                 @endif
                             </tbody>
                         </table>
-                    </div>                
+                    </div>
                 </div>
             {{-- @endforeach --}}
         </div>

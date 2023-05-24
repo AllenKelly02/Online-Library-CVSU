@@ -14,8 +14,10 @@ return new class extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('course');
+            $table->string('category');
             $table->string('description');
-            $table->string('published_year');
+            $table->string('published_date');
             $table->timestamps();
         });
     }

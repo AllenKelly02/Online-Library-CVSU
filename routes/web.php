@@ -43,9 +43,9 @@ Route::middleware('auth')->group(function () {
 
     Route::middleware('role:admin')->prefix('admin')->as('admin.')->group(function () {
 
-        Route::get('/dashboard', function () {
-            return view('layouts.Admin.dashboard');
-        })->name('dashboard');
+        Route::get('/app', function () {
+            return view('layouts.app');
+        })->name('app');
 
         Route::prefix('books')->as('books.')->group(function () {
             Route::get('/list', [BookController::class, 'list'])->name('list');
@@ -53,12 +53,16 @@ Route::middleware('auth')->group(function () {
 
         Route::resource('books', BookController::class);
 
-        Route::get('/unverified', [UnverifiedAccountController::class, 'index'])
-        ->name('unverified');
-
-        Route::post('/account/accept/{id}', [UnverifiedAccountController::class, 'acceptAccount']);
 
     });
+    Route::middleware('auth')->group(function () {
+
+            Route::get('/unverified', [UnverifiedAccountController::class, 'index'])
+            ->name('unverified');
+
+            Route::post('/account/accept/{id}', [UnverifiedAccountController::class, 'acceptAccount']);
+
+        });
 
     Route::middleware('role:user')->prefix('user')->as('user.')->group(function (){
 
