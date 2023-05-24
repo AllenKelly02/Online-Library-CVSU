@@ -15,6 +15,7 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
+        "boxicons": "^2.1.4",
         "daisyui": "^2.51.6"
     }
 }

@@ -1,11 +1,12 @@
 <?php
 
-use App\Http\Controllers\Admin\BookController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\User\BookController as UserBookController;
 use App\Models\Book;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\BookController;
+use App\Http\Controllers\UnverifiedAccountController;
+use App\Http\Controllers\User\BookController as UserBookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,6 +52,12 @@ Route::middleware('auth')->group(function () {
         });
 
         Route::resource('books', BookController::class);
+
+        Route::get('/unverified', [UnverifiedAccountController::class, 'index'])
+        ->name('unverified');
+
+        Route::post('/account/accept/{id}', [UnverifiedAccountController::class, 'acceptAccount']);
+
     });
 
     Route::middleware('role:user')->prefix('user')->as('user.')->group(function (){
@@ -76,5 +83,7 @@ Route::middleware('auth')->group(function () {
 
 
 });
+
+
 
 require __DIR__ . '/auth.php';

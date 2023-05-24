@@ -44,10 +44,10 @@ class User extends Authenticatable
     ];
 
     public function profile () {
-
         return $this->hasOne(Profile::class);
 
     }
+
     public function book_issuing() {
         return $this->hasOne(BookIssuing::class);
     }
