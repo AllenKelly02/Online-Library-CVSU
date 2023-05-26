@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('course');
             $table->string('category');
             $table->string('description');
-            $table->string('published_date');
+            $table->string('published_date')->nullable();
             $table->timestamps();
         });
     }

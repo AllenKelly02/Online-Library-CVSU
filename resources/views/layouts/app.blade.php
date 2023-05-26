@@ -37,7 +37,7 @@
             <div class="w-full h-screen min-h-screen flex container mx-auto md:px-20 pt-20">
                 <div class="w-1/5 h-full flex items-start justify-center border-r border-gray-300">
                     <div class="flex flex-col space-y-1 p-8 justify-left">
-                        <a href="" class="flex items-center space-x-2 p-2 rounded group hover:bg-green-100">
+                        <a href="{{ route('admin.books.list') }}" class="flex items-center space-x-2 p-2 rounded group hover:bg-green-100">
                             <i class='bx bx-category text-xl text-gray-500 group-hover:text-green-700'></i>
                             <p class="group-hover:text-green-700">Dashboard</p>
                         </a>
@@ -52,7 +52,7 @@
                             <p class="group-hover:text-green-700">Verified Accounts</p>
                         </a>
 
-                        <a href="" class="flex items-center space-x-2 p-2 rounded group hover:bg-green-100">
+                        <a href="{{ route('unverified') }}" class="flex items-center space-x-2 p-2 rounded group hover:bg-green-100">
                             <i class='bx bx-user-x text-xl text-gray-500 group-hover:text-green-700'></i>
                             <p class="group-hover:text-green-700">Unverified Accounts</p>
                         </a>

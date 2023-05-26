@@ -60,6 +60,10 @@ Route::middleware('auth')->group(function () {
             Route::get('/unverified', [UnverifiedAccountController::class, 'index'])
             ->name('unverified');
 
+            Route::prefix('unverified')->as('unverified.')->group(function () {
+                Route::get('/index', [BookController::class, 'index'])->name('index');
+            });
+
             Route::post('/account/accept/{id}', [UnverifiedAccountController::class, 'acceptAccount']);
 
         });

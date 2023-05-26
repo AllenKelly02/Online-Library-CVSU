@@ -15,6 +15,10 @@ module.exports = {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            // backgroundImage: {
+            //     'hero-pattern': "url('/images/cvsubg.png')",
+            //     'footer-texture': "url('/img/footer-texture.png')",
+            // },
         },
     },
 

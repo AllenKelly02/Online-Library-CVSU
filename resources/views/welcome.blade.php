@@ -20,13 +20,12 @@
 </head>
 
 <body class="antialiased">
-    <!--<div class="sm:fixed sm:top-0 sm:left-0 p-6 text-left">
-        <p class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">CAVITE STATE UNIVERSITY - BACOOR CITY CAMPUS LIBRARY</p>
-    </div>-->
-
+    {{-- Landing Page Background--}}
     <div
         class="relative sm:flex sm:justify-center sm:items-center min-h-screen
-        bg-dots-darker bg-center bg-green-100  selection:bg-red-500 selection:text-white">
+         selection:bg-red-500 selection:text-white bg-no-repeat bg-cover" style="background-image:url('https://cdn.pixabay.com/photo/2016/01/19/01/42/library-1147815_1280.jpg')">
+
+        {{-- Navigation Landing Page --}}
         @if (Route::has('login'))
 
             <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right">
