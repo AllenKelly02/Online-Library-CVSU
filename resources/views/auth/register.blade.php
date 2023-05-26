@@ -4,6 +4,10 @@
 
         <div x-show="!toggle">
 
+        <!--logo-->
+        <div class="flex p-0 justify-center items-center scale-[0.70]">
+            <img src="{{asset('images/logo.png')}}">
+        </div>
 
             <!-- Name -->
             {{-- <div>
@@ -55,6 +59,11 @@
         </div>
 
         <div x-show="toggle">
+            <!--logo-->
+                <div class="flex p-0 justify-center items-center scale-[0.70]">
+                <img src="{{asset('images/logo.png')}}">
+            </div>
+
             <!-- Name -->
             <div class="flex gap-2">
                 <div>

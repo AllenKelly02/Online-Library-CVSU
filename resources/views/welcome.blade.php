@@ -20,6 +20,10 @@
 </head>
 
 <body class="antialiased">
+    <!--<div class="sm:fixed sm:top-0 sm:left-0 p-6 text-left">
+        <p class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">CAVITE STATE UNIVERSITY - BACOOR CITY CAMPUS LIBRARY</p>
+    </div>-->
+
     <div
         class="relative sm:flex sm:justify-center sm:items-center min-h-screen
         bg-dots-darker bg-center bg-green-100  selection:bg-red-500 selection:text-white">
@@ -67,7 +71,7 @@
                         flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline
                          focus:outline-2 focus:outline-red-500">
                         <div>
-                            <div class="h-16 w-16 bg-red-50 flex items-center justify-center rounded-full">
+                            <!--<div class="h-16 w-16 bg-red-50 flex items-center justify-center rounded-full">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" class="w-7 h-7 stroke-red-500">
                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -75,48 +79,46 @@
                                           0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18
                                            3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
                                 </svg>
-                            </div>
+                            </div>-->
 
-                            <h2 class="mt-6 text-xl font-semibold text-gray-900 ">Browse Books</h2>
+                            <h2 class="mt-6 text-xl font-semibold text-gray-900 ">Campus Library Mission</h2>
 
-                            <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-
+                            <p class="mt-4 text-gray-500 text-sm leading-relaxed">
+                            To support the institution’s mission in its commitment that can produce individuals with truth, excellence, and service in any phases and trends of life.
                             </p>
                         </div>
 
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        <!--<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                        </svg>
+                        </svg>-->
                     </div>
 
                     <div
                         class="scale-100 p-6 bg-green-300 from-gray-700/50 via-transparent
                         rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
                         <div>
-                            <div class="h-16 w-16 bg-red-50flex items-center justify-center rounded-full">
+                            <!--div class="h-16 w-16 bg-red-50flex items-center justify-center rounded-full">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" class="w-7 h-7 stroke-red-500">
                                     <path stroke-linecap="round"
                                         d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
                                 </svg>
-                            </div>
+                            </div>-->
 
-                            <h2 class="mt-6 text-xl font-semibold text-gray-900">Vision</h2>
+                            <h2 class="mt-6 text-xl font-semibold text-gray-900">Campus Library Vision</h2>
 
                             <p class="mt-4 text-gray-500 text-sm leading-relaxed">
-                                Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript
-                                development. Check them out, see for yourself, and massively level up your development
-                                skills in the process.
+                            To promote the humble existence and importance of library in an institution and to its community through quality education where can develop and produce morally upright and competitive individuals
                             </p>
                         </div>
 
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        <!--svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                        </svg>
+                        </svg>-->
                     </div>
 
 
